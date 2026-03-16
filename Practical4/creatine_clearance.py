@@ -9,34 +9,37 @@
 #    CrCl = ((140 - age) * weight) / (72 * Cr)
 #    If female, multiply result by 0.85
 # 5. Print the final CrCl result or the error message for invalid inputs
-age =int(input("Enter your age(year):"))         
-weight =int(input("Enter your weight(kg):"))       
-gender = input("Enter your gender:")
-cr = float(input("Enter your creatinine(µmol/l):"))          
-errors = []
-if age >= 100:
-    errors.append("Age must be less than 100 years.")
+while True:        
+    age = int(input("Enter your age(year):"))
+    weight =int(input("Enter your weight(kg):"))       
+    gender = input("Enter your gender:")
+    cr = float(input("Enter your creatinine(µmol/l):"))          
+    errors = []
+    if age >= 100:
+        errors.append("Age must be less than 100 years.")
 
-if weight <= 20 or weight >= 80:
-    errors.append("Weight must be greater than 20 kg and less than 80 kg.")
+    if weight <= 20 or weight >= 80:
+        errors.append("Weight must be greater than 20 kg and less than 80 kg.")
 
-if cr <= 0 or cr >= 100:
-    errors.append("Creatinine concentration must be greater than 0 µmol/l and less than 100 µmol/l.")
+    if cr <= 0 or cr >= 100:
+        errors.append("Creatinine concentration must be greater than 0 µmol/l and less than 100 µmol/l.")
 
-if gender.lower() not in ["male", "female"]:
-    errors.append("Gender must be either 'male' or 'female'.")
+    if gender.lower() not in ["male", "female"]:
+        errors.append("Gender must be either 'male' or 'female'.")
 
-if len(errors) > 0:
-    print("=== Error: Invalid Input Values ===")
-    for error in errors:
-        print("- " + error)
-else:
-    crcl = ((140 - age) * weight) / (72 * cr)
-    if gender.lower() == "female":
-        crcl *= 0.85
-    print("=== Creatinine Clearance Calculation ===")
-    print(f"Age: {age} years")
-    print(f"Weight: {weight} kg")
-    print(f"Gender: {gender}")
-    print(f"Creatinine concentration: {cr} µmol/l")
-    print("----------------------------------------")
+    if len(errors) > 0:
+        print("=== Error: Invalid Input Values ===")
+        for error in errors:
+            print("- " + error)
+    else:
+        break
+
+crcl = ((140 - age) * weight) / (72 * cr)
+if gender.lower() == "female":
+    crcl *= 0.85
+print("=== Creatinine Clearance Calculation ===")
+print(f"Age: {age} years")
+print(f"Weight: {weight} kg")
+print(f"Gender: {gender}")
+print(f"Creatinine concentration: {crcl} µmol/l")
+print("----------------------------------------")
