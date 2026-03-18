@@ -34,7 +34,7 @@ plt.figure(figsize=(8, 8))
 labels = [f'Low({low_count} patients)', f'Normal({normal_count} patients)', f'High({high_count} patients)']
 sizes = [low_count, normal_count, high_count]
 colors = ['lightcoral', 'lightgreen', 'lightskyblue']
-explode = (0, 0.1, 0)  # Highlight the largest slice
+explode = (0.1,0 , 0)  # Highlight the smallist slice
 
 plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
         shadow=True, startangle=90)
