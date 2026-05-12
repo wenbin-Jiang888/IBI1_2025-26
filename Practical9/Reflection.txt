@@ -1,0 +1,6 @@
+This practical was about building stochastic SIR models to simulate infectious disease spread.
+I learned how to translate real epidemic problems into probabilistic models using Python.
+The basic SIR model was straightforward, while the spatial 2D model was more challenging, especially handling neighbor infections and grid updates.
+Vaccination simulation helped me understand herd immunity intuitively.
+The most important thing I learned is how randomness and population structure affect disease dynamics.
+Overall, it was interesting and useful to see how models can predict epidemic trends.
